@@ -9,6 +9,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem "paperclip", "~> 4.1"
+gem "paperclip-dropbox", ">= 1.1.7"
+gem "figaro"
 
 group :production do
   gem 'pg'
