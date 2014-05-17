@@ -1,7 +1,5 @@
 == README
 Ruby on Rils APP 2014
 
-Bootstrap sass
-CliperMe
-Figaro
+
 <tt>@maykolpf</tt>.
