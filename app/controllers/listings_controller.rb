@@ -4,28 +4,28 @@ class ListingsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_filter :check_user, only: [:edit, :update, :destroy]
 
-  # GET /listings
-  # GET /listings.json
-  def index
-    @listings = Listing.all
+
+  def seller
+    @listings = Listing.where(user: current_user).order("created_at DESC")
   end
 
-  # GET /listings/1
-  # GET /listings/1.json
+  def index
+    @listings = Listing.all.order("created_at DESC")
+  end
+
+
   def show
   end
 
-  # GET /listings/new
+
   def new
     @listing = Listing.new
   end
 
-  # GET /listings/1/edit
   def edit
   end
 
-  # POST /listings
-  # POST /listings.json
+
   def create
     @listing = Listing.new(listing_params)
     @listing.user_id = current_user.id
@@ -41,8 +41,7 @@ class ListingsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /listings/1
-  # PATCH/PUT /listings/1.json
+
   def update
     respond_to do |format|
       if @listing.update(listing_params)
@@ -55,8 +54,7 @@ class ListingsController < ApplicationController
     end
   end
 
-  # DELETE /listings/1
-  # DELETE /listings/1.json
+
   def destroy
     @listing.destroy
     respond_to do |format|

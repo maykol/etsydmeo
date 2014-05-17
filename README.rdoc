@@ -1,5 +1,4 @@
 == README
 Ruby on Rils APP 2014
 
-
-<tt>@maykolpf</tt>.
+<tt>tw @maykolpf</tt>.
